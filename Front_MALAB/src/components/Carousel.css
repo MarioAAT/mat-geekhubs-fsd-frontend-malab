@@ -1,0 +1,32 @@
+.carousel-wrapper {
+    width: 800px;
+    align-content: center;
+}
+
+.carousel-item {
+height: 500px; 
+}
+
+.carousel-caption {
+background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* @media (max-width: 576px) {
+    .carousel-wrapper {
+    margin-right: 0; 
+    }
+    
+    .carousel-item {
+    height: 150px; 
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .carousel-wrapper {
+    margin-right: 10px; 
+    }
+    
+    .carousel-item {
+    height: 200px; 
+    }
+} */
