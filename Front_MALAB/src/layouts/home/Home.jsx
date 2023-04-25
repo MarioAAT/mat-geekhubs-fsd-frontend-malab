@@ -1,7 +1,14 @@
 import React from 'react'
+import { InputText } from '../../components/InputText'
+import { NavBar } from '../../components/NavBar'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <>
+    <NavBar/>
+    <div>Home
+    <InputText/>
+    </div>
+    </>
   )
 }

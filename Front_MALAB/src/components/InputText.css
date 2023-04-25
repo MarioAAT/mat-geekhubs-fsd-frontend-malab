@@ -1,0 +1,21 @@
+.input-text {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.input-text:focus {
+    border-color: #4da6ff;
+    box-shadow: 0 0 5px #4da6ff;
+}
+
+.input-text:invalid {
+    border-color: #ff4d4d;
+}
+
+.input-text:valid {
+    border-color: #66cc66;
+}
