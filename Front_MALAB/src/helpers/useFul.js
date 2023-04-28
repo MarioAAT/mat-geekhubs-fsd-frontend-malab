@@ -64,7 +64,13 @@ export const validate = (name, data, required) => {
         case "tfno":
         case "telefono":
         case "phonenumber":
-            break;
+            if (data === "" && required === true) {
+                return {message: "Please fill the field", validated: false};
+                //Evaluamos mediante la expresión regular 
+            } else if (!/[a-z]|[0-9]/gi.test(data)) {
+                return {message: "Please fill with a valid text", validated: false};
+            }
+            return {message: "", validated: true};
 
         case "dni":
         case "document":
