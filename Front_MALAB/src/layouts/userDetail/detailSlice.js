@@ -3,15 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 export const detailSlice = createSlice({
     name: 'detail',
     initialState: {
-      choosenObject: {}
+        choosenObject: {}
     },
     reducers: {
-      addChoosen: (state, action) => {
-        return {
-          ...state,
-          ...action.payload
+        addChoosen: (state, action) => {
+            return {
+                ...state,
+                ...action.payload
+            }
         }
-      }
     }
     
 });
