@@ -6,7 +6,6 @@ import { NavBar } from '../../components/NavBar'
 export const Home = () => {
     return (
         <>
-        <NavBar/>
         <Caroussel/>
         <div>Home
         <InputText/>
