@@ -4,10 +4,8 @@ export const validate = (name, data, required) => {
         case "surname":
         case "nombre":
         case "apellido":
-            //Aqui evaluaremos strings que NO pueden tener números
             if (data === "" && required === true) {
                 return {message: "Please fill the field", validated: false};
-                //Evaluamos mediante la expresión regular 
             } else if (!/[a-z]/gi.test(data)) {
                 return {message: "Please fill with a valid text", validated: false};
             }
@@ -66,7 +64,6 @@ export const validate = (name, data, required) => {
         case "phonenumber":
             if (data === "" && required === true) {
                 return {message: "Please fill the field", validated: false};
-                //Evaluamos mediante la expresión regular 
             } else if (!/[a-z]|[0-9]/gi.test(data)) {
                 return {message: "Please fill with a valid text", validated: false};
             }

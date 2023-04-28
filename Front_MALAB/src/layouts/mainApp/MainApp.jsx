@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom';
+import { Footer } from '../../components/Footer';
 import { NavBar } from '../../components/NavBar';
 import { Home } from '../home/Home';
 import { Login } from '../login/Login';
@@ -15,6 +16,7 @@ export const MainApp = () => {
         <Route path='/registro' element={<Register/>}/>
         <Route path='*' element={<Navigate to="/"/>}/>
     </Routes>
+    <Footer/>
     </>
   )
 }

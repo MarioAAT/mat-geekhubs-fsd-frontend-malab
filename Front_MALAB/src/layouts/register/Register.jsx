@@ -4,8 +4,6 @@ import { InputText } from '../../components/InputText';
 import { validate } from '../../helpers/useFul';
 import { Container, Form, Col, Row, Button } from 'react-bootstrap';
 import { nuevoUsuario } from '../../services/apiCalls';
-// import { Prev } from 'react-bootstrap/esm/PageItem';
-
 
 export const Register = () => {
     
