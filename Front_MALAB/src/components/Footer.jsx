@@ -5,7 +5,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa'
 
 export const Footer = () => {
     return (
-        <footer className="bg-dark text-white py-5">
+        <footer className="bg-dark text-white py-5 mt-5">
         <Container>
             <Row>
             <Col md={6}>
