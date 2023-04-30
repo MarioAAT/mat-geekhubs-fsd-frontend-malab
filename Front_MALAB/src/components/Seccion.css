@@ -1,0 +1,14 @@
+.colClass{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.colDos{
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    text-align: justify;
+}

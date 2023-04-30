@@ -1,14 +1,12 @@
 import React from 'react'
 import { Caroussel } from '../../components/Carousel'
-import { InputText } from '../../components/InputText'
+import { Seccion } from '../../components/Seccion'
 
 export const Home = () => {
     return (
         <>
         <Caroussel/>
-        <div>Home
-        <InputText/>
-        </div>
+        <Seccion/>
         </>
     )
 }
