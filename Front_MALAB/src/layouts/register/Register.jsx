@@ -4,6 +4,7 @@ import { InputText } from '../../components/InputText';
 import { validate } from '../../helpers/useFul';
 import { Container, Form, Col, Row, Button } from 'react-bootstrap';
 import { nuevoUsuario } from '../../services/apiCalls';
+import './Register.css'
 
 export const Register = () => {
     
@@ -105,8 +106,8 @@ export const Register = () => {
                 <div>{welcome}</div>
             ) : (
         <div className="divPrincipal">
-            <Container>
-            <Row className="registerForm">
+            <Container className='registerForm'>
+            <Row className="">
                 <Col lg={6}>
                 <Form className="formRegister">
                     <Form.Group>

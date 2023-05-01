@@ -52,7 +52,7 @@ logMe(credenciales)
 
     return (
         <>
-        <Container className='loginform'>
+        <Container className='loginform divPrincipal'>
             <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>
