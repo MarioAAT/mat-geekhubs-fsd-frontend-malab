@@ -6,7 +6,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userData, userout } from '../layouts/userDetail/userSlice';
-import { Col } from 'react-bootstrap';
+import { Col, Image } from 'react-bootstrap';
+import logoMalab from '../images/logoMalab.png'
+import './NavBar.css'
 
 export const NavBar = () => {
 
@@ -23,9 +25,11 @@ export const NavBar = () => {
     console.log(credentialsRdx)
     return (
         <>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" className='fixed-top'>
         <Container>
-            <Navbar.Brand as={Link} to={'/'}>MALAB</Navbar.Brand>
+            <Navbar.Brand as={Link} to={'/'}>
+                <Image src={logoMalab} className='image-fluid custom-col'/>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Col className=''>
