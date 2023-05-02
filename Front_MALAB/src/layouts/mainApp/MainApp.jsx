@@ -5,6 +5,7 @@ import { NavBar } from '../../components/NavBar';
 import { Home } from '../home/Home';
 import { Login } from '../login/Login';
 import { Register } from '../register/Register';
+import { Reservas } from '../reservas/Reservas';
 
 export const MainApp = () => {
   return (
@@ -14,6 +15,7 @@ export const MainApp = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/registro' element={<Register/>}/>
+        <Route path='/reserva' element={<Reservas/>}/>
         <Route path='*' element={<Navigate to="/"/>}/>
     </Routes>
     <Footer/>
