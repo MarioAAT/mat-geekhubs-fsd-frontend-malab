@@ -1,0 +1,27 @@
+.reserva-card {
+    border: none;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.reserva-card__date {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.reserva-card__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.reserva-card__list li {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.reserva-card__button {
+    margin-top: 1rem;
+    width: 100%;
+}

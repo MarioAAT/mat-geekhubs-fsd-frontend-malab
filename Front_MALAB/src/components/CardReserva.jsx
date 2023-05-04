@@ -1,7 +1,9 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import { Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../layouts/userDetail/userSlice';
+import '../components/StyleCardReserva.css'
 
 
 
@@ -11,10 +13,10 @@ import { userData } from '../layouts/userDetail/userSlice';
     
         return (
             <>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }} className='reserva-card'>
             <Card.Body>
-                <Card.Title>{appo.date}</Card.Title>
-                    <ul>
+                <Card.Title className='reserva-card__date '>Detalles</Card.Title>
+                    <ul className='reserva-card__list'>
                     {credentialsRdx.credentials.id_rol === 1? (
                         <>
                         <li><li>Fecha:</li>{appo.fecha_reserva}</li>
@@ -32,6 +34,7 @@ import { userData } from '../layouts/userDetail/userSlice';
                         </>
                         )}
                     </ul>
+                    <Button variant="primary" className="appointment-card__button" href="/editar">Editar</Button>
             </Card.Body>
             </Card>
             </>

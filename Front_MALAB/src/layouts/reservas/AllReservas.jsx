@@ -5,6 +5,7 @@ import { userData } from '../userDetail/userSlice';
 import { Col, Container, Row } from "react-bootstrap";
 import { getAllReservas } from '../../services/apiCalls';
 import CardReserva from '../../components/CardReserva';
+import '../reservas/Reservas.css'
 
 export const AllReservas = () => {
 
@@ -28,7 +29,10 @@ export const AllReservas = () => {
 
   return (
     <>
-        <Container className='mt-5'>
+        <Container className='contCardReservas'>
+            <Row>
+            <Col><h1>Reservas</h1></Col>
+            </Row>
         {allReservas.length > 0 ? 
             (<Row className='mt-5'>
                 {allReservas.map( (reservas) => {
