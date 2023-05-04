@@ -24,10 +24,10 @@ export const allUsers = async ( token ) => {
     console.log("Aquí esta el token----->",token)
     let config = {
         headers: {
-            'Authorization': 'Bearer' + token, 
-        }
+            Authorization: `Bearer ${token}`,
+        },
     };
-    return await axios.get(`${root}/api/allusuarios`, config, token);
+    return await axios.get(`${root}/api/allusuarios`, config);
 }
 
 export const getAllReservas = async (token) => {
