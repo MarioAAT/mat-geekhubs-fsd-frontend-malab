@@ -37,15 +37,12 @@ logMe(credenciales)
                 token: respuesta.data.token,
                 id: decodificado.usuarioId,
                 id_rol: decodificado.rolId
-            };   
-            console.log(respuesta)    
+            };       
             dispatch(login({credentials: datosBackend}));
             setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario}`);
     setTimeout(() => {
         navigate("/");
-        }, 3000);
-        console.log(respuesta);
-        console.log(datosBackend);
+        }, 1500);
     })
     .catch(error => console.log(error))
 };
