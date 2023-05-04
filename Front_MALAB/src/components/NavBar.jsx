@@ -22,7 +22,6 @@ export const NavBar = () => {
         return navigate("/");
     }
 
-    console.log(credentialsRdx)
     return (
         <>
         <Navbar bg="light" expand="lg" className='fixed-top'>
@@ -40,7 +39,7 @@ export const NavBar = () => {
                     <Nav.Link href="#link">Mesas</Nav.Link>
                     <Nav.Link href="#link">Tarifas</Nav.Link>
                     <Nav.Link href="#link">Contacto</Nav.Link>
-                    <Nav.Link href="#link">Reservar</Nav.Link>
+                    <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Mi espacio" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Mis reservas</NavDropdown.Item>
@@ -53,11 +52,11 @@ export const NavBar = () => {
                     <Nav.Link href="#link">Mesas</Nav.Link>
                     <Nav.Link href="#link">Tarifas</Nav.Link>
                     <Nav.Link href="#link">Cursos</Nav.Link>
-                    <Nav.Link href="#link">Reservar</Nav.Link>
+                    <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Familia MALAB" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Usuarios</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Reservas</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to='/allusuarios'>Usuarios</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to='/allreservas'>Reservas</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to='/logout' onClick={() => logout()}>Logout</NavDropdown.Item>
                     </NavDropdown>
                     </>
@@ -67,6 +66,7 @@ export const NavBar = () => {
                     <Nav.Link href="#link">Mesas</Nav.Link>
                     <Nav.Link href="#link">Tarifas</Nav.Link>
                     <Nav.Link href="#link">Contacto</Nav.Link>
+                    <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Únete a la Familia" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to='/login'>Soy miembro</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to='/registro'>Quiero unirme</NavDropdown.Item>
