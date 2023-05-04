@@ -14,16 +14,17 @@ export const AllUsuarios = () => {
 
     useEffect(() => {
         if(usuarios.length === 0){
-            allUsers(ReduxCredentials.credentials)
+            allUsers(ReduxCredentials.credentials.token)
             .then(
                 result => {
-                    setUsuarios(result.data)
+                    setUsuarios(result.data.lista_usuarios)
                 },
                 console.log(ReduxCredentials)
             )
             .catch(error => console.log(error));
         }
     }, [usuarios])
+    console.log(usuarios)
 
     const selected = (persona) => {
         dispatch(addChoosen({ choosenObject: persona}))
