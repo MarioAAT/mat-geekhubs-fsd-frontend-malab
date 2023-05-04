@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { addChoosen } from '../userDetail/detailSlice';
 import { userData } from '../userDetail/userSlice';
 import { allUsers } from '../../services/apiCalls';
+import '../allUsuarios/AllUsuarios.css'
 
 export const AllUsuarios = () => {
 
@@ -35,7 +36,7 @@ export const AllUsuarios = () => {
 
   return (
     <>
-        <div >
+        <div className='containerGeneral'>
             <div className='userTitle'><h1>USUARIOS</h1></div>
             { usuarios.length > 0 ? 
                 (<div className='usersContainer'>{usuarios.map(

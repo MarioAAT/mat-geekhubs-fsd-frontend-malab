@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { detailData } from '../userDetail/detailSlice';
-
+import '../allUsuarios/UsuarioDetail.css'
 
 export const UsuarioDetail = () => {
 
@@ -13,7 +13,7 @@ export const UsuarioDetail = () => {
     return (
         <>
         <div className='allUsersDesigne'>
-            <div><h1>Detella de usuario</h1></div>
+            <div className='titulo'><h1>Detalle de usuario</h1></div>
             <div className='usersbox'>
                 <div className='texto'>Nombre(s)</div>
                 {detailRedux?.choosenObject?.nombre}
