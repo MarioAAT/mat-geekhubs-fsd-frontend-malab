@@ -13,6 +13,7 @@ export const AdminEditPerfil = () => {
     const [welcome, SetWelcome] = useState("");
     const userDetail = useSelector(detailData);
     const ID = userDetail.choosenObject.id;
+    const navigate = useNavigate();
 
     const [putPerfil, setputPerfil] = useState({
         nombre: "",
@@ -37,7 +38,7 @@ export const AdminEditPerfil = () => {
             setputPerfil(resultado.data)
             SetWelcome('Perfil modificado correctamente');
             setTimeout(() => {
-                Navigate('/perfil');
+                navigate('/allusuarios');
             }, 1500);
         })
         .catch((error) => console.log(error));
@@ -78,18 +79,6 @@ export const AdminEditPerfil = () => {
                 type={'text'}
                 name={'telefono'}
                 placeholder={'Teléfono...'}
-                required={true}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-                />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Rol</Form.Label>
-            <InputText 
-                type={'integer'}
-                name={'id_rol'}
-                placeholder={'Rol...'}
                 required={true}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
