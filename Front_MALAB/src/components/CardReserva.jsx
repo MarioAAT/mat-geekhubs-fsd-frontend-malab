@@ -1,8 +1,11 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../layouts/userDetail/userSlice';
+import { Link } from 'react-router-dom';
+import { addChoosenReserva } from '../layouts/userDetail/reservaSlice';
+import { useNavigate } from 'react-router-dom';
 import '../components/StyleCardReserva.css'
 
 
@@ -10,7 +13,16 @@ import '../components/StyleCardReserva.css'
 
     function CardReserva ({appo})  {
         const credentialsRdx = useSelector(userData)
+        const navigate = useNavigate();
         console.log(appo, 'EL amigo Alvaro')
+        const dispatch = useDispatch()
+        const selected = (reserva) => {
+            dispatch(addChoosenReserva({ choosenReserva: reserva}))
+            console.log(reserva)
+            setTimeout(() => {
+                navigate('/editarreserva');
+            }, 500);
+        }
     
         return (
             <>
@@ -35,7 +47,7 @@ import '../components/StyleCardReserva.css'
                         </>
                         )}
                     </ul>
-                    <Button variant="primary" className="appointment-card__button" href="/editar">Editar</Button>
+                    <Button variant="primary" className="appointment-card__button" onClick={()=>selected(appo)} >Editar</Button>
             </Card.Body>
             </Card>
             </>
