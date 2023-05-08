@@ -38,3 +38,56 @@ export const getAllReservas = async (token) => {
     };
     return await axios.get(`${root}/api/reservas`, config)
 }
+
+export const getUsuarioData = async (token) => {
+    console.log("Aquí esta el token----->",token)
+    let config = {
+        headers: {
+            Authorization: `Bearer ${token}` 
+        },
+    };
+        return await axios.get(`${root}/api/usuario/perfil`, config)
+}
+
+export const getReservaUsuario = async (token) => {
+
+    let config = {
+        headers: {
+            Authorization: `Bearer ${token}` 
+        },
+        };
+        return await axios.get(`${root}/api/reservas/usuario`, config)
+}
+
+export const editPerfil = async (body, token) => {
+    let config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    };
+    return await axios.put(`${root}/api/usuarios/edit`, body, config)
+}
+
+export const editAdminPerfil = async (id, body, token,) => {
+    console.log(token, body)
+    console.log(id)
+    let config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    };
+    return await axios.put(`${root}/api/usuario/edit/admin/${id}`, body, config)
+}
+
+export const editReserva = async (id, body, token ) => {
+    console.log("----------------------------------------------",)
+    console.log("esto vale body", body)
+    console.log("Esto vale tokensss:",token)
+    let config = {
+        headers: {
+            'Authorization': 'Bearer' + token,
+        }
+    };
+    return await axios.put(`${root}/api/reservas/${id}`, body, config)
+
+}
