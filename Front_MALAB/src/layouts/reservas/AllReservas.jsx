@@ -6,6 +6,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { getAllReservas } from '../../services/apiCalls';
 import CardReserva from '../../components/CardReserva';
 import '../reservas/Reservas.css'
+import { addChoosenReserva } from '../userDetail/reservaSlice';
 
 export const AllReservas = () => {
 
@@ -19,6 +20,7 @@ export const AllReservas = () => {
             getAllReservas(ReduxCredentials?.credentials?.token)
             .then((result) => {
                 setAllReservas(result.data.lista_reservas);
+                
             })
             .catch((error) => {
                 console.log(error);
@@ -26,6 +28,7 @@ export const AllReservas = () => {
         }
     }, [allReservas]);
     console.log(allReservas)
+
 
   return (
     <>
@@ -37,7 +40,7 @@ export const AllReservas = () => {
             (<Row className='mt-5'>
                 {allReservas.map( (reservas) => {
                     return (
-                        <Col key={reservas.id} className='mt-5'>
+                        <Col key={reservas.id}  className='mt-5'>
                             <CardReserva appo={reservas} className='mt-5'/>
                         </Col>
                     );
