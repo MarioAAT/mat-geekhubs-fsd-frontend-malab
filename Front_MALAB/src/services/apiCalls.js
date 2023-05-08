@@ -21,7 +21,6 @@ export const nuevaReserva = async ( body, token) => {
 }
 
 export const allUsers = async ( token ) => {
-    console.log("Aquí esta el token----->",token)
     let config = {
         headers: {
             Authorization: `Bearer ${token}`,
@@ -40,7 +39,6 @@ export const getAllReservas = async (token) => {
 }
 
 export const getUsuarioData = async (token) => {
-    console.log("Aquí esta el token----->",token)
     let config = {
         headers: {
             Authorization: `Bearer ${token}` 
@@ -69,8 +67,6 @@ export const editPerfil = async (body, token) => {
 }
 
 export const editAdminPerfil = async (id, body, token,) => {
-    console.log(token, body)
-    console.log(id)
     let config = {
         headers: {
             Authorization: `Bearer ${token}`
@@ -80,14 +76,21 @@ export const editAdminPerfil = async (id, body, token,) => {
 }
 
 export const editReserva = async (id, body, token ) => {
-    console.log("----------------------------------------------",)
-    console.log("esto vale body", body)
-    console.log("Esto vale tokensss:",token)
     let config = {
         headers: {
             Authorization: `Bearer ${token}`
         }
     };
     return await axios.put(`${root}/api/reservas/${id}`, body, config)
+
+}
+
+export const borrarReserva = async (id, token ) => {
+    let config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    };
+    return await axios.delete(`${root}/api/reservas/${id}`, config)
 
 }
