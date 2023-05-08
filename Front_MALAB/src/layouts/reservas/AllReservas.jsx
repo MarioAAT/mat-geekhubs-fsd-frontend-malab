@@ -19,13 +19,13 @@ export const AllReservas = () => {
             getAllReservas(ReduxCredentials?.credentials?.token)
             .then((result) => {
                 setAllReservas(result.data.lista_reservas);
-                console.log(result)
             })
             .catch((error) => {
                 console.log(error);
             });
         }
     }, [allReservas]);
+    console.log(allReservas)
 
   return (
     <>
