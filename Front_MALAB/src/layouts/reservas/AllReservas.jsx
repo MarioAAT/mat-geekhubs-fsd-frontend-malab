@@ -29,27 +29,38 @@ export const AllReservas = () => {
     }, [allReservas]);
     console.log(allReservas)
 
+    const recargarReservas = () => {
+        getAllReservas(ReduxCredentials?.credentials?.token)
+            .then((result) => {
+                setAllReservas(result.data.lista_reservas);
+                
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
 
-  return (
-    <>
-        <Container className='contCardReservas'>
-            <Row>
-            <Col><h1>Reservas</h1></Col>
-            </Row>
-        {allReservas.length > 0 ? 
-            (<Row className='mt-5'>
-                {allReservas.map( (reservas) => {
-                    return (
-                        <Col key={reservas.id}  className='mt-5'>
-                            <CardReserva appo={reservas} className='mt-5'/>
-                        </Col>
-                    );
-                })}
-            </Row>)
-            : 
-            (<div>......</div>)
-        }        
-        </Container>
-    </>
-  )
+
+    return (
+        <>
+            <Container className='contCardReservas'>
+                <Row>
+                <Col><h1>Reservas</h1></Col>
+                </Row>
+            {allReservas.length > 0 ? 
+                (<Row className='mt-5'>
+                    {allReservas.map( (reservas) => {
+                        return (
+                            <Col key={reservas.id}  className='mt-5'>
+                                <CardReserva appo={reservas} reload={recargarReservas} className='mt-5'/>
+                            </Col>
+                        );
+                    })}
+                </Row>)
+                : 
+                (<div>......</div>)
+            }        
+            </Container>
+        </>
+    )
 }

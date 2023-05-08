@@ -9,7 +9,7 @@ import { borrarReserva } from '../services/apiCalls';
 import '../components/StyleCardReserva.css'
 
 
-    function CardReserva ({appo})  {
+    function CardReserva ({appo, reload})  {
         const credentialsRdx = useSelector(userData)
         const navigate = useNavigate();
         const token = credentialsRdx.credentials.token 
@@ -25,7 +25,7 @@ import '../components/StyleCardReserva.css'
         const cancelarReserva = async () =>{
             borrarReserva(appo.id, token)
             setTimeout(() => {
-                navigate('/allreservas');
+                reload();
             }, 500);
         }
     
