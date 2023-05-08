@@ -85,7 +85,7 @@ export const editReserva = async (id, body, token ) => {
     console.log("Esto vale tokensss:",token)
     let config = {
         headers: {
-            'Authorization': 'Bearer' + token,
+            Authorization: `Bearer ${token}`
         }
     };
     return await axios.put(`${root}/api/reservas/${id}`, body, config)
