@@ -3,24 +3,29 @@ import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../layouts/userDetail/userSlice';
-import { Link } from 'react-router-dom';
 import { addChoosenReserva } from '../layouts/userDetail/reservaSlice';
 import { useNavigate } from 'react-router-dom';
+import { borrarReserva } from '../services/apiCalls';
 import '../components/StyleCardReserva.css'
-
-
 
 
     function CardReserva ({appo})  {
         const credentialsRdx = useSelector(userData)
         const navigate = useNavigate();
-        console.log(appo, 'EL amigo Alvaro')
+        const token = credentialsRdx.credentials.token 
         const dispatch = useDispatch()
         const selected = (reserva) => {
             dispatch(addChoosenReserva({ choosenReserva: reserva}))
             console.log(reserva)
             setTimeout(() => {
                 navigate('/editarreserva');
+            }, 500);
+        }
+
+        const cancelarReserva = async () =>{
+            borrarReserva(appo.id, token)
+            setTimeout(() => {
+                navigate('/allreservas');
             }, 500);
         }
     
@@ -48,6 +53,7 @@ import '../components/StyleCardReserva.css'
                         )}
                     </ul>
                     <Button variant="primary" className="appointment-card__button" onClick={()=>selected(appo)} >Editar</Button>
+                    <Button variant="primary" className="appointment-card__button" onClick={cancelarReserva } >Borrar</Button>
             </Card.Body>
             </Card>
             </>
