@@ -11,6 +11,7 @@ import { EditarPerfil } from '../perfilUsuario/EditarPerfil';
 import { PerfilUsuario } from '../perfilUsuario/PerfilUsuario';
 import { Register } from '../register/Register';
 import { AllReservas } from '../reservas/AllReservas';
+import { EditarReserva } from '../reservas/EditarReserva';
 import { Reservas } from '../reservas/Reservas';
 import { UsuarioReservas } from '../reservas/UsuarioReservas';
 
@@ -30,6 +31,7 @@ export const MainApp = () => {
         <Route path='/misreservas' element={<UsuarioReservas/>}/>
         <Route path='/editperfil' element={<EditarPerfil/>}/>
         <Route path='/admineditperfil' element={<AdminEditPerfil/>}/>
+        <Route path='/editarreserva' element={<EditarReserva/>}/>
         <Route path='*' element={<Navigate to="/"/>}/>
     </Routes>
     <Footer/>
