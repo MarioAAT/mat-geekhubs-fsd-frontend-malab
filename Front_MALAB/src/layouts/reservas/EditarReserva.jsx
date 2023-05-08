@@ -15,8 +15,9 @@ export const EditarReserva = () => {
     const [welcome, setWelcome] = useState("");
     const navigate = useNavigate();
     const ID = ReduxReserva.choosenReserva.id;
+    const idUsuario = ReduxReserva.choosenReserva.id_usuario
     console.log(ReduxReserva, "------------")
-    let params = ReduxReserva
+    
 
     const [mesas, setMesas] = useState([
         {
@@ -51,7 +52,7 @@ export const EditarReserva = () => {
         fecha_reserva: '',
         hora_inicio:'',
         hora_fin: '',
-        id_usuario: ReduxCredentials.credentials.id,
+        id_usuario: idUsuario,
         id_mesa: '',
     });
 
@@ -64,7 +65,7 @@ export const EditarReserva = () => {
     const checkError = (e) => { }
 
     const updateReserva = () => {
-        editReserva(params, reserva, ReduxCredentials.credentials. token)
+        editReserva(ID, reserva, ReduxCredentials.credentials.token)
         .then((resultado) => {
             setReserva(resultado.data)
             setWelcome(`Reserva modificada para el día ${reserva.fecha_reserva}`);
@@ -74,9 +75,10 @@ export const EditarReserva = () => {
         })
         .catch(error => {
             setReserva(error.message);
+            console.log(error)
         });
     }
-    console.log(reserva, 'ljdfhlghdflgjhfdjg')
+    
 
     return (
         <>
