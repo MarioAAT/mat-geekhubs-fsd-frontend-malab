@@ -3,7 +3,7 @@ import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../components/InputText';
-import { reservaData } from '../userDetail/reservaSlice';
+import { addChoosenReserva, reservaData } from '../userDetail/reservaSlice';
 import { editReserva } from '../../services/apiCalls';
 import { userData } from '../userDetail/userSlice';
 
@@ -14,8 +14,9 @@ export const EditarReserva = () => {
     const ReduxReserva = useSelector(reservaData);
     const [welcome, setWelcome] = useState("");
     const navigate = useNavigate();
+    const ID = ReduxReserva.choosenReserva.id;
     console.log(ReduxReserva, "------------")
-    let params = ReduxReserva.choosenReserva.id
+    let params = ReduxReserva
 
     const [mesas, setMesas] = useState([
         {
@@ -46,7 +47,7 @@ export const EditarReserva = () => {
     ]);
 
     const [reserva, setReserva] = useState({
-        id: params,
+        ID,
         fecha_reserva: '',
         hora_inicio:'',
         hora_fin: '',
@@ -79,53 +80,77 @@ export const EditarReserva = () => {
 
     return (
         <>
-        <div>
-            <div className="loginDesign">
-                {welcome !== "" ? (
-            <div>{welcome}</div>
-        ) : (
-            <div>
-                <Container>
-                    <Row className="LoginForm2">
-                        <Col lg={6}>
-                            <Form className='formAppointments' style={{ width: "20rem" }}>
-                                <Form.Select 
-                                name={"service_id"} 
-                                onChange={(e) => inputHandler(e)} 
-                                aria-label="Default select example">
-                                <option>Mesa de trabajo:</option>
-                                    {mesas.map((mesa) => {
-                                        return (
-                                            <option key={mesa.id} value={mesa.id}>{mesa.servicio}</option>
-                                        )
-                                    })}
-                                </Form.Select>
-                                <Form.Select name={"payment"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
-                                    <option>Choose Default payment:</option>
-                                    <option value="1">Cash</option>
-                                    <option value="2">Card</option>
-                                </Form.Select>
-                                <p></p>
-                                <Form.Group>
-                                    <Form.Label>Date:</Form.Label>
-                                    <InputText className={"date"}
-                                                    type={"datetime-local"} name={"date"} placeholder={"date"} required={true}
-                                                    changeFunction={(e) => inputHandler(e)} blurFunction={(e) => checkError(e)} />
-                                </Form.Group>
-                                <p></p>
-                                <div className='botonModificar'>
-                                    <Button variant="primary" onClick={updateReserva}>
-                                        Guardar cambios
-                                    </Button>
-                                </div>
-                            </Form>
-                        </Col>
-                    </Row>
-                </Container>
+        <div className="divPrincipal">
+                <div className="loginDesign">
+                    {welcome !== "" ? (
+                <div>{welcome}</div>
+            ) : (
+        <div className="divPrincipal">
+            <Container className='registerForm'>
+            <Row className="">
+                <Col lg={6}>
+                <Form className="formRegister">
+                    <Form.Group>
+                    <Form.Label>Fecha de reserva:</Form.Label>
+                    <InputText
+                        type={"date"}
+                        name={"fecha_reserva"}
+                        // maxLength={70}
+                        placeholder={"Fecha"}
+                        required={true}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                    />
+                    
+                    <Form.Label>Hora de inicio:</Form.Label>
+                    <InputText
+                        type={"time"}
+                        name={"hora_inicio"}
+                        // maxLength={70}
+                        placeholder={"Hora"}
+                        required={true}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                    />
+                    <Form.Label>Hora de fin:</Form.Label>
+                    <InputText
+                        type={"time"}
+                        name={"hora_fin"}
+                        // maxLength={50}
+                        placeholder={"hora"}
+                        required={true}
+                        changeFunction={(e) => inputHandler(e)}
+                        blurFunction={(e) => checkError(e)}
+                    />
+                    <Form.Label>Mesa de trabajo:</Form.Label>
+                    <Form.Select 
+                        name={"id_mesa"} 
+                        onChange={(e) => inputHandler(e)} 
+                        aria-label="Default select example">
+                        <option>Elije mesa:</option>
+                                {mesas.map((mesas) => {
+                                    return (
+                                        <option key={mesas.id} value={mesas.id}>{mesas.nombre}</option>
+                                    )
+                                })}
+                    </Form.Select>
+                    </Form.Group>
+                    <br />
+                    <Button
+                    
+                    // variant="primary"
+                    onClick={updateReserva}
+                    >
+                    Guardar Cambios
+                    </Button>
+                </Form>
+                </Col>
+            </Row>
+            </Container>
             </div>
-            )}
+                )}
+                </div>
             </div>
-        </div>
         </>
     )
 }
