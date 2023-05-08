@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { detailData } from '../userDetail/detailSlice';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../allUsuarios/UsuarioDetail.css'
 
 export const UsuarioDetail = () => {
@@ -24,6 +26,7 @@ export const UsuarioDetail = () => {
                 <div className='texto'>Telefono</div>
                 {detailRedux?.choosenObject?.telefono}
             </div>
+            <Button as={Link} to={'/admineditperfil'} >Edit Profile</Button>
         </div>
         </>
     )
