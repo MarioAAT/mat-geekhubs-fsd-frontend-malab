@@ -38,7 +38,7 @@ export const AdminEditPerfil = () => {
             setputPerfil(resultado.data)
             SetWelcome('Perfil modificado correctamente');
             setTimeout(() => {
-                navigate('/allusuarios');
+                navigate('/perfil');
             }, 1500);
         })
         .catch((error) => console.log(error));

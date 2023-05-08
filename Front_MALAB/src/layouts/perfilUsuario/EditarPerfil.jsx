@@ -11,6 +11,7 @@ export const EditarPerfil = () => {
     const ReduxCredentials = useSelector(userData);
     const [welcome, SetWelcome] = useState("");
     const ID = ReduxCredentials.credentials.id
+    const navigate = useNavigate();
 
     const [putPerfil, setputPerfil] = useState({
         id: ID,
@@ -20,8 +21,6 @@ export const EditarPerfil = () => {
         password: "",
     })
 
-    console.log(ReduxCredentials)
-    console.log(ID)
 
 
     const inputHandler = (e) => {
@@ -39,12 +38,10 @@ export const EditarPerfil = () => {
             setputPerfil(resultado.data)
             SetWelcome('Perfil modificado correctamente');
             setTimeout(() => {
-                Navigate('/perfil');
+                navigate('/perfil');
             }, 1500);
         })
-        .catch(error => {
-            setputPerfil(error.message)
-        })
+        .catch((error) => console.log(error));
     }
 
     return (
