@@ -10,6 +10,7 @@ import '../components/StyleCardReserva.css'
 
     function CardReserva ({appo})  {
         const credentialsRdx = useSelector(userData)
+        console.log(appo, 'EL amigo Alvaro')
     
         return (
             <>
@@ -22,8 +23,8 @@ import '../components/StyleCardReserva.css'
                         <li><li>Fecha:</li>{appo.fecha_reserva}</li>
                         <li><li>Hora de inicio:</li>{appo.hora_inicio}</li>
                         <li><li>Hora de fin:</li>{appo.hora_fin}</li>
-                        <li><li>Usuario:</li>{appo.id_usuario}</li>
-                        <li><li>Mesa:</li>{appo.id_mesa}</li>
+                        <li><li>Usuario:</li>{appo.Usuario.nombre}</li>
+                        <li><li>Mesa:</li>{appo.Mesas_de_trabajo.nombre}</li>
                         </>
                         ) : (
                         <>
