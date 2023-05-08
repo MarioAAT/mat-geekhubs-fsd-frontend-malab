@@ -41,8 +41,8 @@ export const NavBar = () => {
                     <Nav.Link href="#link">Contacto</Nav.Link>
                     <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Mi espacio" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Mis reservas</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to='/perfil'>Mi perfil</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to='/misreservas'>Mis reservas</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to='/logout' onClick={() => logout()}>Logout</NavDropdown.Item>
                     </NavDropdown>
                     </>
@@ -54,7 +54,8 @@ export const NavBar = () => {
                     <Nav.Link href="#link">Cursos</Nav.Link>
                     <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Familia MALAB" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to='/perfil'>Mi perfil</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to='/misreservas'>Mis Reservas</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to='/allusuarios'>Usuarios</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to='/allreservas'>Reservas</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to='/logout' onClick={() => logout()}>Logout</NavDropdown.Item>
