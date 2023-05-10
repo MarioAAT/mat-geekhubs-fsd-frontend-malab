@@ -6,6 +6,7 @@ import { AllUsuarios } from '../allUsuarios/AllUsuarios';
 import { UsuarioDetail } from '../allUsuarios/UsuarioDetail';
 import { Home } from '../home/Home';
 import { Login } from '../login/Login';
+import { MesasTrabajo } from '../mesas/MesasTrabajo';
 import { AdminEditPerfil } from '../perfilUsuario/AdminEditPerfil';
 import { EditarPerfil } from '../perfilUsuario/EditarPerfil';
 import { PerfilUsuario } from '../perfilUsuario/PerfilUsuario';
@@ -13,6 +14,7 @@ import { Register } from '../register/Register';
 import { AllReservas } from '../reservas/AllReservas';
 import { EditarReserva } from '../reservas/EditarReserva';
 import { Reservas } from '../reservas/Reservas';
+import { UsuarioEditarReserva } from '../reservas/UsuarioEditarReserva';
 import { UsuarioReservas } from '../reservas/UsuarioReservas';
 
 export const MainApp = () => {
@@ -32,6 +34,8 @@ export const MainApp = () => {
         <Route path='/editperfil' element={<EditarPerfil/>}/>
         <Route path='/admineditperfil' element={<AdminEditPerfil/>}/>
         <Route path='/editarreserva' element={<EditarReserva/>}/>
+        <Route path='/usuarioeditreserva' element={<UsuarioEditarReserva/>}/>
+        <Route path='/mesastrabajo' element={<MesasTrabajo/>}/>
         <Route path='*' element={<Navigate to="/"/>}/>
     </Routes>
     <Footer/>
