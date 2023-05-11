@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import mesa from '../images/mesa7.jpg'
 import './Seccion.css'
 
@@ -13,7 +13,7 @@ export const Seccion = () => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Nunc dictum nibh a felis maximus pretium. Integer sagittis, tortor ac gravida tristique, odio justo tincidunt arcu, vel ultrices velit velit vitae ipsum. Nulla facilisi. Sed at risus felis.</p>
             </Col>
             <Col lg={6} className="colDos">
-                <img src={mesa} alt="imagen de ejemplo" />
+                <Image src={mesa} className='img-fluid'/>
             </Col>
             </Row>
         </Container>
