@@ -37,7 +37,7 @@ export const NavBar = () => {
                     <>
                     <Nav.Link as={Link} to='/coworking'>Coworking</Nav.Link>
                     <Nav.Link as={Link} to='/mesastrabajo'>Mesas</Nav.Link>
-                    <Nav.Link href="#link">Contacto</Nav.Link>
+                    <Nav.Link as={Link} to='/contacto'>Contacto</Nav.Link>
                     <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Mi espacio" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to='/perfil'>Mi perfil</NavDropdown.Item>
@@ -49,7 +49,6 @@ export const NavBar = () => {
                     <>
                     <Nav.Link as={Link} to='/coworking'>Coworking</Nav.Link>
                     <Nav.Link as={Link} to='/mesastrabajo'>Mesas</Nav.Link>
-                    <Nav.Link href="#link">Cursos</Nav.Link>
                     <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Familia MALAB" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to='/perfil'>Mi perfil</NavDropdown.Item>
@@ -63,11 +62,11 @@ export const NavBar = () => {
                     <>
                     <Nav.Link as={Link} to='/coworking'>Coworking</Nav.Link>
                     <Nav.Link as={Link} to='/mesastrabajo'>Mesas</Nav.Link>
-                    <Nav.Link href="#link">Contacto</Nav.Link>
+                    <Nav.Link as={Link} to='/contacto'>Quiero visitar MALAB</Nav.Link>
                     <NavDropdown title="Únete a la Familia" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to='/login'>Soy miembro</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to='/registro'>Quiero unirme</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Quiero visitar MALAB</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to='/contacto'>Contacto</NavDropdown.Item>
                     </NavDropdown>
                     </>
                 )}                
