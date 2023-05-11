@@ -50,6 +50,7 @@ logMe(credenciales)
     return (
         <>
         <Container className='loginform divPrincipal'>
+        <h1>Login</h1>
             <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>

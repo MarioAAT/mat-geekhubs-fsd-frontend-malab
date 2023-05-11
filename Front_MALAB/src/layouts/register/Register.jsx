@@ -107,6 +107,7 @@ export const Register = () => {
             ) : (
         <div className="divPrincipal">
             <Container className='registerForm'>
+            <h1>Registrate</h1>
             <Row className="">
                 <Col lg={6}>
                 <Form className="formRegister">
