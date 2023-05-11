@@ -35,9 +35,8 @@ export const NavBar = () => {
             <Nav className="me-auto d-flex justify-content-end">
                 {credentialsRdx.credentials.id_rol === 2 ? (
                     <>
-                    <Nav.Link href="#home">Coworking</Nav.Link>
+                    <Nav.Link as={Link} to='/coworking'>Coworking</Nav.Link>
                     <Nav.Link as={Link} to='/mesastrabajo'>Mesas</Nav.Link>
-                    <Nav.Link href="#link">Tarifas</Nav.Link>
                     <Nav.Link href="#link">Contacto</Nav.Link>
                     <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Mi espacio" id="basic-nav-dropdown">
@@ -48,9 +47,8 @@ export const NavBar = () => {
                     </>
                 ) : credentialsRdx.credentials.id_rol === 1 ? (
                     <>
-                    <Nav.Link href="#home">Coworking</Nav.Link>
+                    <Nav.Link as={Link} to='/coworking'>Coworking</Nav.Link>
                     <Nav.Link as={Link} to='/mesastrabajo'>Mesas</Nav.Link>
-                    <Nav.Link href="#link">Tarifas</Nav.Link>
                     <Nav.Link href="#link">Cursos</Nav.Link>
                     <Nav.Link as={Link} to='/reserva'>Reservar</Nav.Link>
                     <NavDropdown title="Familia MALAB" id="basic-nav-dropdown">
@@ -63,9 +61,8 @@ export const NavBar = () => {
                     </>
                 ) : (
                     <>
-                    <Nav.Link href="#home">Coworking</Nav.Link>
+                    <Nav.Link as={Link} to='/coworking'>Coworking</Nav.Link>
                     <Nav.Link as={Link} to='/mesastrabajo'>Mesas</Nav.Link>
-                    <Nav.Link href="#link">Tarifas</Nav.Link>
                     <Nav.Link href="#link">Contacto</Nav.Link>
                     <NavDropdown title="Únete a la Familia" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to='/login'>Soy miembro</NavDropdown.Item>

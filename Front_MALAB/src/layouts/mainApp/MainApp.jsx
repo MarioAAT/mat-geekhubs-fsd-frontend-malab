@@ -4,6 +4,7 @@ import { Footer } from '../../components/Footer';
 import { NavBar } from '../../components/NavBar';
 import { AllUsuarios } from '../allUsuarios/AllUsuarios';
 import { UsuarioDetail } from '../allUsuarios/UsuarioDetail';
+import { CoworkingPage } from '../coworkingpage/CoworkingPage';
 import { Home } from '../home/Home';
 import { Login } from '../login/Login';
 import { MesasTrabajo } from '../mesas/MesasTrabajo';
@@ -36,6 +37,7 @@ export const MainApp = () => {
         <Route path='/editarreserva' element={<EditarReserva/>}/>
         <Route path='/usuarioeditreserva' element={<UsuarioEditarReserva/>}/>
         <Route path='/mesastrabajo' element={<MesasTrabajo/>}/>
+        <Route path='/coworking' element={<CoworkingPage/>} />
         <Route path='*' element={<Navigate to="/"/>}/>
     </Routes>
     <Footer/>
