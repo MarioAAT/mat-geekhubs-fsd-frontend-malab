@@ -1,6 +1,7 @@
-import React from 'react'
-import { Caroussel } from '../../components/Carousel'
-import { Seccion } from '../../components/Seccion'
+import React from 'react';
+import { Caroussel } from '../../components/Carousel';
+import { Seccion } from '../../components/Seccion';
+import { DosSeccion } from '../../components/DosSeccion';
 import './Home.css';
 
 export const Home = () => {
@@ -9,6 +10,9 @@ export const Home = () => {
         <Caroussel/>
         <hr></hr>
         <Seccion/>
+        <hr></hr>
+        <DosSeccion/>
+        <hr></hr>
         </>
     )
 }
