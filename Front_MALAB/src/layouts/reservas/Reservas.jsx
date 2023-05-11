@@ -83,6 +83,7 @@ export const Reservas = () => {
             ) : (
         <div className="divPrincipal">
             <Container className='registerForm'>
+                <h1>Reservar</h1>
             <Row className="">
                 <Col lg={6}>
                 <Form className="formRegister">

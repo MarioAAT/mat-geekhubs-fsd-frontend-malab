@@ -28,6 +28,7 @@ export const MesasTrabajo = () => {
                 <Row>
                 <Col><h1>Mesas de Trabajo</h1></Col>
                 </Row>
+                <hr></hr>
             {mesas.length > 0 ? 
                 (<Row className='mt-5'>
                     {mesas.map( (mesa) => {
@@ -41,6 +42,7 @@ export const MesasTrabajo = () => {
                 : 
                 (<div>......</div>)
             }
+        <hr></hr>
                 <Row>
                     <Col className='colMesa'>
                     <h1><strong>Para poder reservar una mesa de trabajo debes registrarte!</strong></h1>
@@ -50,6 +52,7 @@ export const MesasTrabajo = () => {
                     </Row>
                     </Col>
                 </Row>
+                <hr></hr>
             </Container>
 
         </>
