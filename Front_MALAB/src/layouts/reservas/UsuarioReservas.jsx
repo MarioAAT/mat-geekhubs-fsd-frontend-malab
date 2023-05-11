@@ -27,7 +27,8 @@ export const UsuarioReservas = () => {
 
     return (
         <>
-            <Container>
+            <Container className='contCardReservas'>
+                <h1>Mis Reservas</h1>
             {reserva.length > 0 ? 
                 (<Row>
                     {reserva.map( (reservas) => {

@@ -85,6 +85,19 @@ export const editReserva = async (id, body, token ) => {
 
 }
 
+export const UsuarioEditReserva = async (id, body, token ) => {
+    console.log(id)
+    console.log(token)
+    console.log(body)
+    let config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    };
+    return await axios.put(`${root}/api/reservas/${id}`, body, config)
+
+}
+
 export const borrarReserva = async (id, token ) => {
     let config = {
         headers: {
@@ -94,3 +107,7 @@ export const borrarReserva = async (id, token ) => {
     return await axios.delete(`${root}/api/reservas/${id}`, config)
 
 }
+
+export const GetAllMesas = async () => {
+    return await axios.get(`${root}/api/mesas`);
+} 
