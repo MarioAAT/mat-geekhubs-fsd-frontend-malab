@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Col, Container, Row  } from 'react-bootstrap';
+import { useNavigate, Link } from 'react-router-dom';
+import { Button, Col, Container, Row  } from 'react-bootstrap';
 import { MesaCard } from '../../components/MesaCard';
 import { GetAllMesas } from '../../services/apiCalls';
+import './MesasTrabajo.css'
 
 export const MesasTrabajo = () => {
 
@@ -39,8 +40,18 @@ export const MesasTrabajo = () => {
                 </Row>)
                 : 
                 (<div>......</div>)
-            }        
+            }
+                <Row>
+                    <Col className='colMesa'>
+                    <h1><strong>Para poder reservar una mesa de trabajo debes registrarte!</strong></h1>
+                    <Row>
+                    <Button className='buttonMesa' as={Link} to='/login'>Soy Miembro</Button>
+                    <Button className='buttonMesa'as={Link} to='/registro' >Quiero unirme</Button>
+                    </Row>
+                    </Col>
+                </Row>
             </Container>
+
         </>
     )
 }
