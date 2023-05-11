@@ -20,12 +20,10 @@ export const AllUsuarios = () => {
                 result => {
                     setUsuarios(result.data.lista_usuarios)
                 },
-                console.log(ReduxCredentials)
             )
             .catch(error => console.log(error));
         }
     }, [usuarios])
-    console.log(usuarios)
 
     const selected = (persona) => {
         dispatch(addChoosen({ choosenObject: persona}))
@@ -45,7 +43,6 @@ export const AllUsuarios = () => {
                         <div
                         onClick={()=>selected(persona)} 
                         key={persona.id} className='usersDesign'>
-                        {/* {persona.first_name} */}
                         {persona.nombre}
                         </div>
                         )

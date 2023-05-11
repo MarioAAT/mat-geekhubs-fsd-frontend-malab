@@ -3,7 +3,7 @@ import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../components/InputText';
-import { addChoosenReserva, reservaData } from '../userDetail/reservaSlice';
+import { reservaData } from '../userDetail/reservaSlice';
 import { UsuarioEditReserva } from '../../services/apiCalls'; 
 import { userData } from '../userDetail/userSlice';
 
@@ -15,8 +15,6 @@ export const UsuarioEditarReserva = () => {
     const [welcome, setWelcome] = useState("");
     const navigate = useNavigate();
     const ID = ReduxReserva.choosenReserva.id;
-    console.log(ReduxReserva, "------------")
-    console.log(ReduxCredentials)
     
 
     const [mesas, setMesas] = useState([
@@ -75,7 +73,6 @@ export const UsuarioEditarReserva = () => {
         })
         .catch(error => {
             setReserva(error.message);
-            console.log(error)
         });
     }
     
@@ -97,7 +94,6 @@ export const UsuarioEditarReserva = () => {
                     <InputText
                         type={"date"}
                         name={"fecha_reserva"}
-                        // maxLength={70}
                         placeholder={"Fecha"}
                         required={true}
                         changeFunction={(e) => inputHandler(e)}
@@ -108,7 +104,6 @@ export const UsuarioEditarReserva = () => {
                     <InputText
                         type={"time"}
                         name={"hora_inicio"}
-                        // maxLength={70}
                         placeholder={"Hora"}
                         required={true}
                         changeFunction={(e) => inputHandler(e)}
@@ -118,7 +113,6 @@ export const UsuarioEditarReserva = () => {
                     <InputText
                         type={"time"}
                         name={"hora_fin"}
-                        // maxLength={50}
                         placeholder={"hora"}
                         required={true}
                         changeFunction={(e) => inputHandler(e)}
@@ -140,7 +134,6 @@ export const UsuarioEditarReserva = () => {
                     <br />
                     <Button
                     
-                    // variant="primary"
                     onClick={updateUsuarioReserva}
                     >
                     Guardar Cambios

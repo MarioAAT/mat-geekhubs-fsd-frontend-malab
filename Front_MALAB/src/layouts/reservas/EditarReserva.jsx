@@ -3,7 +3,7 @@ import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../components/InputText';
-import { addChoosenReserva, reservaData } from '../userDetail/reservaSlice';
+import { reservaData } from '../userDetail/reservaSlice';
 import { editReserva } from '../../services/apiCalls';
 import { userData } from '../userDetail/userSlice';
 
@@ -16,7 +16,6 @@ export const EditarReserva = () => {
     const navigate = useNavigate();
     const ID = ReduxReserva.choosenReserva.id;
     const idUsuario = ReduxReserva.choosenReserva.id_usuario
-    console.log(ReduxReserva, "------------")
     
 
     const [mesas, setMesas] = useState([
@@ -75,7 +74,6 @@ export const EditarReserva = () => {
         })
         .catch(error => {
             setReserva(error.message);
-            console.log(error)
         });
     }
     

@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../components/InputText';
 import { userData } from '../userDetail/userSlice';
@@ -55,7 +55,6 @@ export const Reservas = () => {
             [e.target.name]: e.target.value,
         }));
     };
-    console.log(reserva)
 
     const checkError = (e) => { }
 

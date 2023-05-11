@@ -29,7 +29,6 @@ export const PerfilUsuario = () => {
                 .catch((error) => console.log(error));
         }
     }, [usuario]);
-    console.log(usuario)
 
     return (
             <>

@@ -20,7 +20,6 @@ export const MesasTrabajo = () => {
             });
         }
     }, [mesas]);
-    console.log(mesas)
 
     return (
         <>

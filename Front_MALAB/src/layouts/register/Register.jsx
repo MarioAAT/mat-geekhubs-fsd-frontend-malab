@@ -45,8 +45,6 @@ export const Register = () => {
     };
 
     useEffect(() => {
-        console.log(credenciales);
-        console.log(valiUser);
         for(let error in credencialesError) {
             if (credencialesError[error] !== "") {
                 setRegisterAct(false);

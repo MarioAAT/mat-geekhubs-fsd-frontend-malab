@@ -23,7 +23,6 @@ export const UsuarioReservas = () => {
             })
         }
     },[reserva]);
-    console.log(reserva)
 
     return (
         <>

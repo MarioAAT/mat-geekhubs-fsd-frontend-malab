@@ -6,7 +6,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import { getAllReservas } from '../../services/apiCalls';
 import CardReserva from '../../components/CardReserva';
 import '../reservas/Reservas.css'
-import { addChoosenReserva } from '../userDetail/reservaSlice';
 
 export const AllReservas = () => {
 
