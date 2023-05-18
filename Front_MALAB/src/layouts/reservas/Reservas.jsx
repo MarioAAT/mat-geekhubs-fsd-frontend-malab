@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../components/InputText';
 import { userData } from '../userDetail/userSlice';
 import { Container, Form, Col, Row, Button } from 'react-bootstrap';
-import { nuevaReserva } from '../../services/apiCalls';
+import { GetAllMesas, nuevaReserva } from '../../services/apiCalls';
 
 
 export const Reservas = () => {
@@ -13,33 +13,19 @@ export const Reservas = () => {
     const [welcome, setWelcome] = useState("");
     const ReduxCredentials = useSelector(userData);
 
-    const [mesas, setMesas] = useState([
-        {
-            id: 1,
-            nombre: "Biehne"
-        },
-        {
-            id: 2,
-            nombre: "Eandrade"
-        },
-        {
-            id: 3,
-            nombre: "Hun Chung"
-        },
-        {
-            id: 4,
-            nombre: "Baranga"
-        },
-        {
-            id: 5,
-            nombre: "MacDowell"
-        },
-        {
-            id: 6,
-            nombre: "Cofán"
-        },
-        
-    ])
+    const [mesas, setMesas] = useState([]);
+
+    useEffect(() => {
+        if(mesas.length === 0) {
+            GetAllMesas()
+            .then((result) => {
+                setMesas(result.data.lista_mesas);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        }
+    }, [mesas]);
 
     const [reserva, setReserva] = useState({
         fecha_reserva: '',

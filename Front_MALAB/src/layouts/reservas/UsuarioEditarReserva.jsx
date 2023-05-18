@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../components/InputText';
 import { reservaData } from '../userDetail/reservaSlice';
-import { UsuarioEditReserva } from '../../services/apiCalls'; 
+import { GetAllMesas, UsuarioEditReserva } from '../../services/apiCalls'; 
 import { userData } from '../userDetail/userSlice';
 
 
@@ -17,34 +17,20 @@ export const UsuarioEditarReserva = () => {
     const ID = ReduxReserva.choosenReserva.id;
     
 
-    const [mesas, setMesas] = useState([
-        {
-            id: 1,
-            nombre: "Biehne"
-        },
-        {
-            id: 2,
-            nombre: "Eandrade"
-        },
-        {
-            id: 3,
-            nombre: "Hun Chung"
-        },
-        {
-            id: 4,
-            nombre: "Baranga"
-        },
-        {
-            id: 5,
-            nombre: "MacDowell"
-        },
-        {
-            id: 6,
-            nombre: "Cofán"
-        },
-        
-    ]);
+    const [mesas, setMesas] = useState([]);
 
+    useEffect(() => {
+        if(mesas.length === 0) {
+            GetAllMesas()
+            .then((result) => {
+                setMesas(result.data.lista_mesas);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        }
+    }, [mesas]);
+    
     const [reserva, setReserva] = useState({
         ID,
         fecha_reserva: '',
