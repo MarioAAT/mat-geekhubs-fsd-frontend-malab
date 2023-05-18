@@ -4,8 +4,13 @@ import { Button, Col, Container, Row  } from 'react-bootstrap';
 import { MesaCard } from '../../components/MesaCard';
 import { GetAllMesas } from '../../services/apiCalls';
 import './MesasTrabajo.css'
+import { useSelector } from 'react-redux';
+import { userData } from '../userDetail/userSlice';
 
 export const MesasTrabajo = () => {
+
+    const credentialsRdx = useSelector(userData);
+    const navigate = useNavigate();
 
     const [mesas, setMesas] = useState([]);
 
@@ -41,6 +46,34 @@ export const MesasTrabajo = () => {
                 : 
                 (<div>......</div>)
             }
+        {credentialsRdx.credentials.id_rol === 2 ? (
+        <>
+        <hr></hr>
+                <Row>
+                    <Col className='colMesa'>
+                    <h1><strong>Para poder reservar una mesa de trabajo debes registrarte!</strong></h1>
+                    <Row>
+                    <Button className='buttonMesa' as={Link} to='/reserva'>Reservar</Button>
+                    </Row>
+                    </Col>
+                </Row>
+        <hr></hr>
+        </>
+        ) : credentialsRdx.credentials.id_rol === 1 ? (
+            <>
+            <hr></hr>
+                    <Row>
+                        <Col className='colMesa'>
+                        <h1><strong>Para poder reservar una mesa de trabajo debes registrarte!</strong></h1>
+                        <Row>
+                        <Button className='buttonMesa' as={Link} to='/reserva'>Reservar</Button>
+                        </Row>
+                        </Col>
+                    </Row>
+            <hr></hr>
+            </>
+        ) : (
+            <>
         <hr></hr>
                 <Row>
                     <Col className='colMesa'>
@@ -51,7 +84,9 @@ export const MesasTrabajo = () => {
                     </Row>
                     </Col>
                 </Row>
-                <hr></hr>
+        <hr></hr>
+        </>
+        )}
             </Container>
 
         </>
