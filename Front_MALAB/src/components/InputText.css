@@ -1,4 +1,4 @@
-/* .input-text {
+.input-text {
     width: 100%;
     padding: 10px;
     border: 2px solid #ccc;
@@ -18,7 +18,7 @@
 
 .input-text:valid {
     border-color: #66cc66;
-} */
+}
 
 input {
     width: 100%;
