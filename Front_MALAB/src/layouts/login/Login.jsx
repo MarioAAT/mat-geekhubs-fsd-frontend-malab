@@ -39,7 +39,7 @@ logMe(credenciales)
                 id_rol: decodificado.rolId
             };       
             dispatch(login({credentials: datosBackend}));
-            setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario}`);
+            setWelcome(`Bienvenid@ de nuevo, te echamos de menos!!`);
     setTimeout(() => {
         navigate("/");
         }, 1500);
@@ -49,6 +49,11 @@ logMe(credenciales)
 
     return (
         <>
+        <div className="divPrincipal">
+                <div className="loginDesign">
+                    {welcome !== "" ? (
+                <div className='welcomeDiv'>{welcome}</div>
+            ) : (
         <Container className='loginform divPrincipal'>
         <h1>Login</h1>
             <Form>
@@ -84,6 +89,9 @@ logMe(credenciales)
             </Button>
             </Form>
         </Container>
+        )}
+        </div>
+    </div>
         </>
     )
 }

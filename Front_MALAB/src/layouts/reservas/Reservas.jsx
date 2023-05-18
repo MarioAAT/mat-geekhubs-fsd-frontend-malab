@@ -78,7 +78,7 @@ export const Reservas = () => {
         <div className="divPrincipal">
                 <div className="loginDesign">
                     {welcome !== "" ? (
-                <div>{welcome}</div>
+                <div className='welcomeDiv'>{welcome}</div>
             ) : (
         <div className="divPrincipal">
             <Container className='registerForm'>

@@ -98,10 +98,12 @@ export const Register = () => {
 
     return (
         <>
+        <hr></hr>
             <div className="divPrincipal">
                 <div className="loginDesign">
                     {welcome !== "" ? (
-                <div>{welcome}</div>
+                <div className='welcomeDiv'>{welcome}</div>
+                
             ) : (
         <div className="divPrincipal">
             <Container className='registerForm'>
@@ -232,6 +234,7 @@ export const Register = () => {
                 )}
                 </div>
             </div>
+            <hr></hr>
         </>
     )
 }
