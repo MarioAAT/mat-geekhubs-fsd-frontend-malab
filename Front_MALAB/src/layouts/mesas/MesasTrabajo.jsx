@@ -51,7 +51,7 @@ export const MesasTrabajo = () => {
         <hr></hr>
                 <Row>
                     <Col className='colMesa'>
-                    <h1><strong>Para poder reservar una mesa de trabajo debes registrarte!</strong></h1>
+                    <h1><strong>¡¡Reserva la mesa que mas se ajuste a tus necesidades!!</strong></h1>
                     <Row>
                     <Button className='buttonMesa' as={Link} to='/reserva'>Reservar</Button>
                     </Row>
@@ -64,7 +64,7 @@ export const MesasTrabajo = () => {
             <hr></hr>
                     <Row>
                         <Col className='colMesa'>
-                        <h1><strong>Para poder reservar una mesa de trabajo debes registrarte!</strong></h1>
+                        <h1><strong>¡¡Reserva la mesa que mas se ajuste a tus necesidades!!</strong></h1>
                         <Row>
                         <Button className='buttonMesa' as={Link} to='/reserva'>Reservar</Button>
                         </Row>
