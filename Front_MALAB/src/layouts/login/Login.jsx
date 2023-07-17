@@ -49,7 +49,7 @@ logMe(credenciales)
 
     return (
         <>
-        <div className="divPrincipal">
+        <div className="divPrincipalLogin">
                 <div className="loginDesign">
                     {welcome !== "" ? (
                 <div className='welcomeDiv'>{welcome}</div>
